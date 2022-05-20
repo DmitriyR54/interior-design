@@ -1,6 +1,6 @@
-# project-boilerplate
-My basic setup for web applications 
+# Interior Design
+Website of the design studio. Portfolio project 
 
 Used libraries and services:
 
-1. Camera SVG icon - https://icons8.com/icon/XPh0hm15Lkuj/camera
+1. SVG icons - https://icons8.com/icon
