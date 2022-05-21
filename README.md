@@ -1,5 +1,5 @@
 # Interior Design
-Website of the design studio. Portfolio project 
+Website of the design studio. Portfolio project.
 
 Used libraries and services:
 
