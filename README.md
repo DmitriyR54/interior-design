@@ -1,4 +1,4 @@
-# Interior Design
+# Brume Interior
 Website of the design studio. Portfolio project.
 
 Used libraries and services:
