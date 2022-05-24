@@ -1,22 +1,29 @@
+@import './variables.scss';
+
 .container{
     max-width: 1190px;
     margin: 0 auto;
     padding: 0 15px;
     background-image:linear-gradient(to right, 
     #F1EFE9 0% 2px, 
-    #fdfaf3 2px 25%,
+    $white 2px 25%,
     #F1EFE9 25% calc(25% + 2px), 
-    #fdfaf3 calc(25% + 2px) 50%,
+    $white calc(25% + 2px) 50%,
     #F1EFE9 50% calc(50% + 2px), 
-    #fdfaf3 calc(50% + 2px) 75%,
+    $white calc(50% + 2px) 75%,
     #F1EFE9 75% calc(75% + 2px), 
-    #fdfaf3 calc(75% + 2px) 100%
+    $white calc(75% + 2px) 100%
   );
   border-right: 2px solid #F1EFE9;
+
+  &.nolines{
+    background-image: none;
+    border-right: none;
+  }
 }
 
 .title{
     font-family: 'Playfair';
-    font-size: 2.25rem;
+    font-size: 3rem;
     line-height: 1;
 }

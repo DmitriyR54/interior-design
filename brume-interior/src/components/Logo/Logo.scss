@@ -1,0 +1,47 @@
+.path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+
+    &.path-B {
+        animation: pathB 10s linear infinite;
+    }
+    &.path-R {
+        animation: pathR 10s linear infinite;
+    }
+}
+
+@keyframes pathB {
+    0% {
+        stroke-dashoffset: 150;
+        d: path('M0 2 H20 C25 2 35 10 25 20 H0 H20 C25 20 35 30 25 40 H0');
+    }
+    20%,
+    90% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        d: path('M0 2 H20 C25 2 35 10 25 20 H0 H20 C25 20 35 30 25 40 H0');
+    }
+    100% {
+        opacity: 0;
+        stroke-dashoffset: 0;
+        d: path('');
+    }
+}
+
+@keyframes pathR {
+    0% {
+        stroke-dashoffset: 150;
+        d: path('M40 2 H60 C60 1 75 10 60 20 H40 H60 C60 20 65 25 65 41');
+    }
+    25%,
+    90% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        d: path('M40 2 H60 C60 1 75 10 60 20 H40 H60 C60 20 65 25 65 41');
+    }
+    100% {
+        opacity: 0;
+        stroke-dashoffset: 0;
+        d: path('');
+    }
+}
