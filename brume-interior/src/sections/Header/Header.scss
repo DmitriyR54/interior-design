@@ -1,0 +1,225 @@
+@import '../../styles/variables.scss';
+@import '../../components/Logo/Logo.scss';
+
+.header__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    padding: 1rem 0 1.5rem;
+}
+
+/* burger menu button (using !important to overwrite library's styles */
+.header__menu-btn {
+    padding: 0.5rem 0 !important;
+    position: relative;
+    z-index: 101;
+
+    .hamburger-box {
+        display: flex;
+        align-items: center;
+        width: 1.3rem !important;
+
+        span,
+        span::before,
+        span::after {
+            width: 100%;
+            height: 3px;
+            background-color: #fcfdfd;
+        }
+    }
+
+    &.is-active {
+        .hamburger-box {
+            span,
+            span::before,
+            span::after {
+                background-color: #fcfdfd;
+            }
+        }
+    }
+}
+
+/* active navigation background */
+.header__nav-wrapper {
+    width: 0;
+    height: 100vh;
+    background-color: rgba($blue, 0.5);
+    transition: 0.5s ease-out;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &.nav-active {
+        width: 100%;
+    }
+}
+/* navigation links list */
+.header__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    height: 100vh;
+    padding: 0 2.5rem;
+    background-color: $dark-blue;
+    transform: translateX(-100%);
+    cursor: default;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* here I'm trying to fix a bug with a 'white line' appearing at left of the list on the screens with size less than 768px (please email me if you know the reason why it happens) */
+    &::after {
+        content: '';
+        width: 5px;
+        height: 100%;
+        background-color: $dark-blue;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        z-index: 1;
+    }
+
+    li {
+        transform: translateX(-200%);
+        opacity: 0;
+        animation: hideLinks 0.75s ease-out forwards;
+
+        a {
+            color: $white;
+            font-size: 1.25rem;
+            outline: none;
+            position: relative;
+
+            /* hover effect */
+            &::after {
+                content: '';
+                width: 100%;
+                height: 5px;
+                background-color: #6276ff;
+                border-radius: 1px;
+                opacity: 0;
+                transition: 0.3s ease-out;
+                position: absolute;
+                left: 0;
+                bottom: 10px;
+                z-index: -1;
+            }
+
+            &:hover,
+            &:focus {
+                &::after {
+                    opacity: 1;
+                    bottom: 3px;
+                }
+            }
+        }
+    }
+
+    &.nav-active {
+        li {
+            animation: showLinks 0.5s ease-out forwards;
+        }
+
+        @for $i from 1 through 4 {
+            li:nth-child(#{$i}) {
+                animation-delay: $i * 0.15s;
+            }
+        }
+    }
+}
+
+/* animated logo */
+.header__logo {
+    height: 1.6rem;
+    align-self: center;
+    text-align: center;
+
+    svg {
+        height: 100%;
+    }
+}
+
+/* link to the email */
+.header__link {
+    align-self: center;
+    text-align: right;
+
+    a {
+        color: #252525;
+        font-family: $muller;
+        font-size: 0.75rem;
+        transition: 0.2s ease-out;
+        position: relative;
+
+        /* envelope icon */
+        &::before {
+            content: url('./img/envelope.svg');
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: -1px;
+            left: -25px;
+            z-index: 1;
+        }
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}
+
+/* ANIMATIONS */
+@keyframes showLinks {
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes hideLinks {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+}
+
+/* DEVICE ADAPTATION */
+/* tablet */
+@media (max-width: $tablet) {
+    .header__inner {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    /* link to the email */
+    .header__link {
+        display: none;
+    }
+    /* animated logo */
+    .header__logo {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        text-align: left;
+    }
+    /* nav tag */
+    .header__menu {
+        grid-column: 2 / span 1;
+        text-align: right;
+    }
+    /* burger menu button */
+    .header__menu-btn .hamburger-box {
+        width: 2rem !important;
+    }
+}

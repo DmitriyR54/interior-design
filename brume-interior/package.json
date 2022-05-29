@@ -12,7 +12,9 @@
         "url": "https://github.com/DmitriyR54/brume-interior"
     },
     "keywords": [
-        "webpack", "portfolio", "front-end"
+        "webpack",
+        "portfolio",
+        "front-end"
     ],
     "author": "DmitriyR54",
     "license": "MIT",
@@ -50,6 +52,7 @@
         "xml-loader": "^1.2.1"
     },
     "dependencies": {
+        "hamburgers": "^1.2.1",
         "lodash": "^4.17.21"
     }
 }

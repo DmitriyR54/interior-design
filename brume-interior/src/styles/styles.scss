@@ -1,16 +1,57 @@
 @import './variables.scss';
 @import './components.scss';
 
-*{
+* {
+    /* reset default styles */
     margin: 0;
     padding: 0;
+    border: none;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    /* set common styles */
+    font-family: $raleway;
+    font-size: 1rem;
+    line-height: 150%;
 }
-// body section
-html{
+
+html {
     font-size: 20px;
 }
-body{
-    background-color: #fdfaf3;
-    color: #1B1B1B;
+
+header,
+section,
+footer {
+    padding: 0 15px;
+    /* speed of moving aside when menu is opening/closing */
+    transition: transform 0.5s ease-out;
+}
+
+header,
+section {
+    background-color: $white;
+}
+
+@media (max-width: $tablet) {
+    html {
+        font-size: 18px;
+    }
+
+    header,
+    section,
+    footer {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: $phone) {
+    html {
+        font-size: 16px;
+    }
+
+    header,
+    section,
+    footer {
+        padding: 0 5px;
+    }
 }

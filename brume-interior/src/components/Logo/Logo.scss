@@ -11,11 +11,15 @@
 }
 
 @keyframes pathB {
-    0% {
+    0%{
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
         stroke-dashoffset: 150;
         d: path('M0 2 H20 C25 2 35 10 25 20 H0 H20 C25 20 35 30 25 40 H0');
     }
-    20%,
+    30%,
     90% {
         opacity: 1;
         stroke-dashoffset: 0;
@@ -29,15 +33,19 @@
 }
 
 @keyframes pathR {
-    0% {
-        stroke-dashoffset: 150;
-        d: path('M40 2 H60 C60 1 75 10 60 20 H40 H60 C60 20 65 25 65 41');
+    0%{
+        opacity: 0;
     }
-    25%,
+    10% {
+        opacity: 1;
+        stroke-dashoffset: 150;
+        d: path('M40 2 H60 C60 1 75 10 60 20 H40 H60 C60 20 65 25 65 41.5');
+    }
+    35%,
     90% {
         opacity: 1;
         stroke-dashoffset: 0;
-        d: path('M40 2 H60 C60 1 75 10 60 20 H40 H60 C60 20 65 25 65 41');
+        d: path('M40 2 H60 C60 1 75 10 60 20 H40 H60 C60 20 65 25 65 41.5');
     }
     100% {
         opacity: 0;
