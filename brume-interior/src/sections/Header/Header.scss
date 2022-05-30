@@ -3,7 +3,7 @@
 
 .header {
     background-color: transparent;
-    transition: 0.25s linear;
+    transition: background-color transform 0.25s linear;
     position: fixed;
     top: 0;
     left: 0;

@@ -1,3 +1,55 @@
-.intro__inner{
+@import '../../styles/variables.scss';
+
+.intro__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-top: 4.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.intro__main {
+    margin: -4.25rem 0 -4.5rem -5rem;
+    padding: 4.25rem 5rem;
+    background-color: rgba($blue, 0.97);
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    z-index: 2;
+}
+
+.intro__carousel {
+    overflow: hidden;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+.intro__carousel-container {
+    display: flex;
+}
+.intro__carousel-slide {
+    flex: 0 0 100%;
+    margin-right: 20px;
+    position: relative;
+}
+
+.intro__carousel-dots {
+    grid-column: 2 / span 1;
+    padding: 2.25rem 0 2rem;
+    text-align: right;
+    font-size: 0;
+}
+.intro__carousel-dot {
+    width: 26px;
+    height: 3px;
+    margin-right: 12px;
+    background-color: rgba(26, 68, 74, 0.25);
+    transition: 0.3s ease-out;
+    cursor: pointer;
+
+    &.is-selected {
+        background-color: rgba(26, 68, 74, 1);
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
 }

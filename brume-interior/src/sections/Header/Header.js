@@ -63,6 +63,7 @@ const HeaderSection = (container) => {
         });
     }
 
+    /* this function toggles header styles */
     function fixedHeader() {
         if (window.scrollY >= headerTag.clientHeight) {
             headerTag.classList.add('header-fixed');
@@ -72,7 +73,6 @@ const HeaderSection = (container) => {
     }
 
     fixedHeader();
-
     window.addEventListener('scroll', () => {
         fixedHeader();
     });

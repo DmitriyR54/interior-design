@@ -1,12 +1,8 @@
 .image {
-    display: inline-block;
     width: fit-content;
     max-width: 100%;
-    height: fit-content;
+    max-height: fit-content;
     background-color: #ccc;
-    border: 5px solid #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     position: relative;
 
