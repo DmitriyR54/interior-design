@@ -20,11 +20,16 @@ html {
 }
 
 header,
+main,
 section,
 footer {
     padding: 0 15px;
-    /* speed of moving aside when menu is opening/closing */
+    /* speed of moving aside when navigation is opening/closing */
     transition: transform 0.5s ease-out;
+}
+
+main {
+    padding: 0;
 }
 
 header,

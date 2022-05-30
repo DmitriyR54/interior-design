@@ -1,11 +1,57 @@
 @import '../../styles/variables.scss';
 @import '../../components/Logo/Logo.scss';
 
+.header {
+    background-color: transparent;
+    transition: 0.25s linear;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    &.header-fixed {
+        background-color: $blue;
+        z-index: 100;
+
+        .container {
+            background-image: linear-gradient(
+                to right,
+                $dark-blue 0px 2px,
+                $blue 2px 25%,
+                $dark-blue 25% calc(25% + 2px),
+                $blue calc(25% + 2px) 50%,
+                $dark-blue 50% calc(50% + 2px),
+                $blue calc(50% + 2px) 75%,
+                $dark-blue 75% calc(75% + 2px),
+                $blue calc(75% + 2px) 100%
+            );
+            border-right: 2px solid $dark-blue;
+        }
+
+        .header__inner {
+            padding: 0.5rem 0;
+        }
+
+        .header__logo path {
+            stroke: #fbfcfc;
+        }
+
+        .header__link a {
+            color: $white;
+
+            &::before {
+                content: url('./img/envelope-alt.svg');
+            }
+        }
+    }
+}
 .header__inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     padding: 1rem 0 1.5rem;
+    transition: 0.25s linear;
 }
 
 /* burger menu button (using !important to overwrite library's styles */

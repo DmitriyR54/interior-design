@@ -8,8 +8,9 @@ const HeaderSection = (container) => {
     /* 'menu' is not just navigation links, but a burger button too */
     let menuActive = false;
 
+    const headerTag = document.querySelector('.header');
     /* nav tag */
-    const headerMenu = document.querySelector('.header__menu');
+    const headerMenu = headerTag.querySelector('.header__menu');
     /* nav burger button */
     const headerMenuBtn = headerMenu.querySelector('.header__menu-btn');
 
@@ -35,7 +36,10 @@ const HeaderSection = (container) => {
     }
 
     /* array of components which will be moved when user opens a navigation (typically the whole page) */
-    const movingContent = [document.querySelector('.header')];
+    const movingContent = [];
+    window.addEventListener('DOMContentLoaded', () => {
+        movingContent.push(headerTag, document.querySelector('.main'));
+    });
 
     /* this function creates effect of moving aside content */
     function moveContent() {
@@ -58,6 +62,20 @@ const HeaderSection = (container) => {
             }
         });
     }
+
+    function fixedHeader() {
+        if (window.scrollY >= headerTag.clientHeight) {
+            headerTag.classList.add('header-fixed');
+        } else {
+            headerTag.classList.remove('header-fixed');
+        }
+    }
+
+    fixedHeader();
+
+    window.addEventListener('scroll', () => {
+        fixedHeader();
+    });
 };
 
 export { HeaderSection };
