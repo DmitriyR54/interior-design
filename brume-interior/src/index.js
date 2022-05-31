@@ -1,14 +1,14 @@
 // libraries
 import 'core-js/actual';
 import _ from 'lodash';
+// styles
+import './styles/styles.scss';
+import './fonts/fonts.scss';
 // sections
 import { HeaderSection } from 'Sections/Header/Header';
 import { IntroSection } from 'Sections/Intro/Intro';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
-// styles
-import './styles/styles.scss';
-import './fonts/fonts.scss';
 
 const bodyContainer = document.body;
 
