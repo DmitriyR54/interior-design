@@ -7,6 +7,7 @@ import './fonts/fonts.scss';
 // sections
 import { HeaderSection } from 'Sections/Header/Header';
 import { IntroSection } from 'Sections/Intro/Intro';
+import { FeaturesSection } from 'Sections/Features/Features';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
@@ -18,6 +19,7 @@ const mainContainer = (container) => {
     mainTag.className = 'main';
     // sections
     IntroSection(mainTag);
+    FeaturesSection(mainTag);
 
     return container.appendChild(mainTag);
 };
