@@ -8,6 +8,7 @@ import './fonts/fonts.scss';
 import { HeaderSection } from 'Sections/Header/Header';
 import { IntroSection } from 'Sections/Intro/Intro';
 import { FeaturesSection } from 'Sections/Features/Features';
+import { PortfolioSection } from 'Sections/Portfolio/Portfolio';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
@@ -20,6 +21,7 @@ const mainContainer = (container) => {
     // sections
     IntroSection(mainTag);
     FeaturesSection(mainTag);
+    PortfolioSection(mainTag);
 
     return container.appendChild(mainTag);
 };

@@ -10,7 +10,7 @@ const LazyLoad = () => {
                     if (entry.isIntersecting) {
                         const image = entry.target;
                         const dataSrc = image.getAttribute('data-src');
-                        import(/* webpackMode: "eager" */ `../../images/${dataSrc}`).then((src) => {
+                        import(/* webpackMode: "eager" */ `../../images/lazyload/${dataSrc}`).then((src) => {
                             image.setAttribute('src', src.default);
                         });
                         imageObserver.unobserve(image);
@@ -36,7 +36,7 @@ const LazyLoad = () => {
                     lazyloadImages.forEach((img) => {
                         if (img.offsetTop < window.innerHeight + scrollTop) {
                             const dataSrc = img.getAttribute('data-src');
-                            import(/* webpackMode: "lazy" */ `../../images/${dataSrc}`).then((src) => {
+                            import(/* webpackMode: "eager" */ `../../images/${dataSrc}`).then((src) => {
                                 img.setAttribute('src', src.default);
                             });
                         }
