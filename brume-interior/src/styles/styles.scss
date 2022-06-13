@@ -19,6 +19,14 @@ html {
     font-size: 20px;
 }
 
+body {
+    overflow: auto;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
 header,
 main,
 section,

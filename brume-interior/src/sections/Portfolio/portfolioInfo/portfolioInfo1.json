@@ -1,6 +1,32 @@
 {
     "name": "Living room interior",
     "category": "Interior design",
-    "date": "05.06.2022",
-    "images": ["portfolio-livingroom-1.jpg", "portfolio-livingroom-2.jpg", "portfolio-livingroom-3.jpg", "portfolio-livingroom-4.jpg", "portfolio-livingroom-5.jpg"]
+    "date": "5 Jun '22",
+    "images": [
+        {
+            "filename": "portfolio-livingroom-1.jpg",
+            "width": "800px",
+            "height": "1067px"
+        },
+        {
+            "filename": "portfolio-livingroom-2.jpg",
+            "width": "1920px",
+            "height": "1264px"
+        },
+        {
+            "filename": "portfolio-livingroom-3.jpg",
+            "width": "1919px",
+            "height": "1251px"
+        },
+        {
+            "filename": "portfolio-livingroom-4.jpg",
+            "width": "1920px",
+            "height": "1280px"
+        },
+        {
+            "filename": "portfolio-livingroom-5.jpg",
+            "width": "1920px",
+            "height": "1080px"
+        }
+    ]
 }

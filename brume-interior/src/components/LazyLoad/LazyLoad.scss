@@ -3,6 +3,7 @@
     max-width: 100%;
     max-height: fit-content;
     background-color: #ccc;
+    transition: 0.3s ease;
     overflow: hidden;
     position: relative;
 
@@ -27,6 +28,13 @@
         position: absolute;
         top: -10%;
         z-index: 2;
+    }
+
+    &.image-loaded {
+        &::before,
+        &::after {
+            display: none;
+        }
     }
 }
 

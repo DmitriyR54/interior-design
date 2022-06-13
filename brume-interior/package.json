@@ -53,9 +53,11 @@
     },
     "dependencies": {
         "embla-carousel": "^6.2.0",
+        "embla-carousel-auto-height": "^6.2.0",
         "embla-carousel-autoplay": "^6.2.0",
         "hamburgers": "^1.2.1",
         "lightgallery": "^2.4.0",
-        "lodash": "^4.17.21"
+        "lodash": "^4.17.21",
+        "simplebar": "^5.3.8"
     }
 }

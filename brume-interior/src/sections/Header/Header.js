@@ -51,12 +51,12 @@ const HeaderSection = (container) => {
                 el.style.transform = `translateX(${headerMenuNav.clientWidth}px)`;
                 /* using scrollbar width so content will not "jump" when scrollbar appears after removing 'overflow: hidden' (relevant mostly for pc) */
                 el.style.width = `calc(100% - ${scrollbarWidth}px)`;
-                document.body.style.overflow = 'hidden';
+                document.body.classList.add('no-scroll');
             } else {
-                el.style.transform = `translateX(0px)`;
+                el.style.transform = `translateX(0)`;
                 /* using a delay so that the scrollbar only shows up when the content is set in place */
                 setTimeout(() => {
-                    document.body.style.overflow = 'auto';
+                    document.body.classList.remove('no-scroll');
                     el.style.width = '100%';
                 }, 500);
             }

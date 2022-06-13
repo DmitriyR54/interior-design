@@ -1,9 +1,12 @@
 // libraries
 import 'core-js/actual';
 import _ from 'lodash';
+import 'simplebar';
 // styles
 import './styles/styles.scss';
 import './fonts/fonts.scss';
+import 'simplebar/dist/simplebar.css';
+
 // sections
 import { HeaderSection } from 'Sections/Header/Header';
 import { IntroSection } from 'Sections/Intro/Intro';
@@ -30,4 +33,6 @@ const mainContainer = (container) => {
 HeaderSection(bodyContainer);
 mainContainer(bodyContainer);
 // components
-LazyLoad();
+document.addEventListener('DOMContentLoaded', () => {
+    LazyLoad();
+});
