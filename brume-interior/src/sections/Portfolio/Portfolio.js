@@ -4,7 +4,7 @@ import './Portfolio.scss';
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 import { openModal, closeModal } from 'Components/ModalWindow/Modal';
 // external libraries
-import EmblaCarousel from 'embla-carousel';
+import EmblaCarouselPortfolio from 'embla-carousel';
 
 const PortfolioSection = (container) => {
     container.innerHTML += portfolioHtml;
@@ -170,8 +170,8 @@ const PortfolioSection = (container) => {
                         LazyLoad();
 
                         // use carousel for images
-                        const emblaNode = document.querySelector('.portfolio__modal-photos-wrapper');
-                        const embla = EmblaCarousel(emblaNode);
+                        const emblaNodePortfolio = document.querySelector('.portfolio__modal-photos-wrapper');
+                        const emblaPortfolio = EmblaCarouselPortfolio(emblaNodePortfolio);
                     }
                 });
             };
