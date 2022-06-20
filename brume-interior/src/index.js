@@ -5,13 +5,14 @@ import 'simplebar';
 // styles
 import './styles/styles.scss';
 import './fonts/fonts.scss';
-import 'simplebar/dist/simplebar.css';
+import 'simplebar/dist/simplebar.min.css';
 
 // sections
 import { HeaderSection } from 'Sections/Header/Header';
 import { IntroSection } from 'Sections/Intro/Intro';
 import { FeaturesSection } from 'Sections/Features/Features';
 import { PortfolioSection } from 'Sections/Portfolio/Portfolio';
+import { ServicesSection } from 'Sections/Services/Services';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
@@ -25,6 +26,7 @@ const mainContainer = (container) => {
     IntroSection(mainTag);
     FeaturesSection(mainTag);
     PortfolioSection(mainTag);
+    ServicesSection(mainTag);
 
     return container.appendChild(mainTag);
 };

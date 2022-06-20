@@ -109,6 +109,11 @@ const PortfolioSection = (container) => {
                     el.addEventListener('mouseleave', portfolioMouseLeave);
                     el.addEventListener('focus', portfolioMouseEnter);
                     el.addEventListener('blur', portfolioMouseLeave);
+
+                    // return element's width to the default value
+                    portfolioItems.forEach((el) => {
+                        el.style.flex = '0 0 25%';
+                    });
                 } else {
                     // and remove it starting from tablets
                     el.removeEventListener('mouseenter', portfolioMouseEnter);
@@ -126,7 +131,7 @@ const PortfolioSection = (container) => {
         // apply function when user enters the page, when resizes browser window or if changes screen orientation (portrait/landscape)
         portfolioHover();
         window.addEventListener('resize', portfolioHover);
-        window.addEventListener('orientationChange', portfolioHover);
+        screen.orientation.addEventListener('change', portfolioHover);
 
         // DETAIL INFORMATION ABOUT SINGLE PORTFOLIO ITEM
         // list of 'Detail info' buttons on the portfolio items

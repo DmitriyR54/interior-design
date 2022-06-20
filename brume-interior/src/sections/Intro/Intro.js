@@ -12,7 +12,6 @@ const IntroSection = (container) => {
         /* there is a weird bug in a production mode. unless you use setTimout, exactly this carousel wont be working until screen resizing */
         setTimeout(() => {
             const emblaNodeIntro = document.querySelector('.intro__carousel');
-            console.log(emblaNodeIntro);
 
             const emblaOptionsIntro = { loop: true };
             const emplaPluginsIntro = [AutoplayIntro()];

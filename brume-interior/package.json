@@ -58,6 +58,7 @@
         "hamburgers": "^1.2.1",
         "lightgallery": "^2.4.0",
         "lodash": "^4.17.21",
+        "overlayscrollbars": "^1.13.2",
         "simplebar": "^5.3.8"
     }
 }
