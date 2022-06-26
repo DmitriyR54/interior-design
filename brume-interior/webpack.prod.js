@@ -81,10 +81,10 @@ module.exports = merge(common, {
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
-        new FontminPlugin({
-            autodetect: true,
-            allowedFilesRegex: null,
-            skippedFilesRegex: null,
-        }),
+        // new FontminPlugin({
+        //     autodetect: true,
+        //     allowedFilesRegex: null,
+        //     skippedFilesRegex: null,
+        // }),
     ],
 });
