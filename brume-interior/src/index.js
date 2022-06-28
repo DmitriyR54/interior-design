@@ -15,6 +15,7 @@ import { PortfolioSection } from 'Sections/Portfolio/Portfolio';
 import { ServicesSection } from 'Sections/Services/Services';
 import { VideoSection } from 'Sections/VideoSection/VideoSection';
 import { StagesSection } from 'Sections/Stages/Stages';
+import { FormSection } from 'Sections/FormSection/FormSection';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
@@ -31,6 +32,7 @@ const mainContainer = (container) => {
     ServicesSection(mainTag);
     VideoSection(mainTag);
     StagesSection(mainTag);
+    FormSection(mainTag);
 
     return container.appendChild(mainTag);
 };
