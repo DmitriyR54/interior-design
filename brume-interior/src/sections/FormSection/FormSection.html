@@ -1,7 +1,7 @@
 <section class="formSection">
     <div class="container">
         <div class="formSection__inner">
-            <form action="#" class="form" id="form">
+            <form class="form" id="form">
                 <h2 class="title form__title">
                     Are you dreaming about the interior by BRUME?
                 </h2>
@@ -12,8 +12,9 @@
                     </legend>
                     <input type="text" name="name" class="form__input form__input-name" placeholder="Name *" required>
                     <input type="tel" name="phone" class="form__input form__input-phone" placeholder="Phone number *"
-                        required>
-                    <input type="email" name="email" class="form__input form__input-email" placeholder="E-mail">
+                        pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" required>
+                    <input type="email" name="email" class="form__input form__input-email" placeholder="E-mail"
+                        pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+">
                 </fieldset>
                 <fieldset class="form__submit">
                     <button class="form__submit-btn" type="submit">
@@ -27,3 +28,11 @@
         </div>
     </div>
 </section>
+
+<div class="modal form__modal">
+    <div class="modal-inner form__modal-inner">
+        <p class="form__modal-text">
+            <span class="form__modal-text-name"></span>, <span>if you want to hire me, please, contact me.</span>
+        </p>
+    </div>
+</div>

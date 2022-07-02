@@ -1,8 +1,10 @@
 @import '../../styles/variables.scss';
 
-.formSection{
+/* hide content that overflows because of negative margins */
+.formSection {
     overflow: hidden;
 }
+/* using mg and pd to move container */
 .formSection__inner {
     margin-right: -5rem;
     padding-right: 5rem;
@@ -59,10 +61,12 @@
     }
 }
 
+/* wrapper for the button and text below it */
 .form__submit {
     display: flex;
     flex-direction: column;
 }
+/* form submit button */
 .form__submit-btn {
     margin-bottom: 1.25rem;
     padding: 0.5rem 0;
@@ -75,8 +79,10 @@
     letter-spacing: 2px;
     overflow: hidden;
     cursor: pointer;
+    outline: none;
     position: relative;
 
+    /* background */
     &::after {
         content: '';
         width: 10px;
@@ -91,13 +97,15 @@
         z-index: 1;
     }
 
+    /* text */
     span {
         transition: 0.25s ease;
         position: relative;
         z-index: 2;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         &::after {
             width: calc(100% + 4px);
             background-color: #fff;
@@ -110,8 +118,10 @@
     }
 }
 
+/* DEVICE ADAPTATION */
+/* tablet */
 @media (max-width: $tablet) {
-    .formSection__inner{
+    .formSection__inner {
         margin: 0 -10px;
         padding: 0;
         background-position: center;
@@ -122,12 +132,12 @@
         background-color: rgba($blue, 0.9);
     }
 }
-
-@media(max-width: $phone){
-    .form{
+/* mobile phone */
+@media (max-width: $phone) {
+    .form {
         padding: 1rem 2rem;
     }
-    .form__legend{
+    .form__legend {
         max-width: 100%;
         text-align: center;
     }
