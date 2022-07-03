@@ -119,6 +119,12 @@
 }
 
 /* DEVICE ADAPTATION */
+@media (max-width: $smallScreen) {
+    .form {
+        width: 75%;
+    }
+}
+
 /* tablet */
 @media (max-width: $tablet) {
     .formSection__inner {
@@ -132,6 +138,7 @@
         background-color: rgba($blue, 0.9);
     }
 }
+
 /* mobile phone */
 @media (max-width: $phone) {
     .form {
