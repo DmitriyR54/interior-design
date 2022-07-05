@@ -5,76 +5,76 @@ import 'hamburgers/_sass/hamburgers/hamburgers.scss';
 const HeaderSection = (container) => {
     container.innerHTML += headerHtml;
 
-    /* 'menu' is not just navigation links, but a burger button too */
-    let menuActive = false;
-
-    const headerTag = document.querySelector('.header');
-    /* nav tag */
-    const headerMenu = headerTag.querySelector('.header__menu');
-    /* nav burger button */
-    const headerMenuBtn = headerMenu.querySelector('.header__menu-btn');
-
-    headerMenuBtn.onclick = toggleNav;
-    /* navigation links list */
-    const headerMenuNav = headerMenu.querySelector('.header__nav');
-    /* active navigation background */
-    const headerMenuNavBg = headerMenu.querySelector('.header__nav-wrapper');
-
-    headerMenuNavBg.onclick = (event) => {
-        if (event.target.className === 'header__nav-wrapper nav-active') {
-            toggleNav();
-        }
-    };
-
-    function toggleNav() {
-        /* toggle menu status */
-        !menuActive ? (menuActive = true) : (menuActive = false);
-        headerMenuBtn.classList.toggle('is-active');
-        headerMenuNav.classList.toggle('nav-active');
-        headerMenuNavBg.classList.toggle('nav-active');
-        moveContent();
-    }
-
-    /* array of components which will be moved when user opens a navigation (typically the whole page) */
-    const movingContent = [];
     window.addEventListener('DOMContentLoaded', () => {
-        movingContent.push(headerTag, document.querySelector('.main'));
-    });
+        /* 'menu' is not just navigation links, but a burger button too */
+        let menuActive = false;
 
-    /* this function creates effect of moving aside content */
-    function moveContent() {
-        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        const headerTag = document.querySelector('.header');
+        /* nav tag */
+        const headerMenu = headerTag.querySelector('.header__menu');
+        /* nav burger button */
+        const headerMenuBtn = headerMenu.querySelector('.header__menu-btn');
 
-        movingContent.forEach((el) => {
-            if (menuActive) {
-                /* moving content on the navigation width */
-                el.style.transform = `translateX(${headerMenuNav.clientWidth}px)`;
-                /* using scrollbar width so content will not "jump" when scrollbar appears after removing 'overflow: hidden' (relevant mostly for pc) */
-                el.style.width = `calc(100% - ${scrollbarWidth}px)`;
-                document.body.classList.add('no-scroll');
-            } else {
-                el.style.transform = `translateX(0)`;
-                /* using a delay so that the scrollbar only shows up when the content is set in place */
-                setTimeout(() => {
-                    document.body.classList.remove('no-scroll');
-                    el.style.width = '100%';
-                }, 500);
+        headerMenuBtn.onclick = toggleNav;
+        /* navigation links list */
+        const headerMenuNav = headerMenu.querySelector('.header__nav');
+        /* active navigation background */
+        const headerMenuNavBg = headerMenu.querySelector('.header__nav-wrapper');
+
+        headerMenuNavBg.onclick = (event) => {
+            if (event.target.className === 'header__nav-wrapper nav-active') {
+                toggleNav();
             }
-        });
-    }
+        };
 
-    /* this function toggles header styles */
-    function fixedHeader() {
-        if (window.scrollY >= headerTag.clientHeight) {
-            headerTag.classList.add('header-fixed');
-        } else {
-            headerTag.classList.remove('header-fixed');
+        function toggleNav() {
+            /* toggle menu status */
+            !menuActive ? (menuActive = true) : (menuActive = false);
+            headerMenuBtn.classList.toggle('is-active');
+            headerMenuNav.classList.toggle('nav-active');
+            headerMenuNavBg.classList.toggle('nav-active');
+            moveContent();
         }
-    }
 
-    fixedHeader();
-    window.addEventListener('scroll', () => {
+        /* array of components which will be moved when user opens a navigation (typically the whole page) */
+        const movingContent = [];
+        movingContent.push(headerTag, document.querySelector('.main'), document.querySelector('.footer'));
+
+        /* this function creates effect of moving aside content */
+        function moveContent() {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+            movingContent.forEach((el) => {
+                if (menuActive) {
+                    /* moving content on the navigation width */
+                    el.style.transform = `translateX(${headerMenuNav.clientWidth}px)`;
+                    /* using scrollbar width so content will not "jump" when scrollbar appears after removing 'overflow: hidden' (relevant mostly for pc) */
+                    el.style.width = `calc(100% - ${scrollbarWidth}px)`;
+                    document.body.classList.add('no-scroll');
+                } else {
+                    el.style.transform = `translateX(0)`;
+                    /* using a delay so that the scrollbar only shows up when the content is set in place */
+                    setTimeout(() => {
+                        document.body.classList.remove('no-scroll');
+                        el.style.width = '100%';
+                    }, 500);
+                }
+            });
+        }
+
+        /* this function toggles header styles */
+        function fixedHeader() {
+            if (window.scrollY >= headerTag.clientHeight) {
+                headerTag.classList.add('header-fixed');
+            } else {
+                headerTag.classList.remove('header-fixed');
+            }
+        }
+
         fixedHeader();
+        window.addEventListener('scroll', () => {
+            fixedHeader();
+        });
     });
 };
 

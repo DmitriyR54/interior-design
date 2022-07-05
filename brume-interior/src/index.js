@@ -2,10 +2,10 @@
 import 'core-js/actual';
 import _ from 'lodash';
 import 'simplebar';
+import 'simplebar/dist/simplebar.min.css';
 // styles
 import './styles/styles.scss';
 import './fonts/fonts.scss';
-import 'simplebar/dist/simplebar.min.css';
 
 // sections
 import { HeaderSection } from 'Sections/Header/Header';
@@ -17,6 +17,7 @@ import { VideoSection } from 'Sections/VideoSection/VideoSection';
 import { StagesSection } from 'Sections/Stages/Stages';
 import { FormSection } from 'Sections/FormSection/FormSection';
 import { TestimonialsSection } from 'Sections/Testimonials/Testimonials';
+import { FooterSection } from 'Sections/Footer/Footer';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
@@ -42,6 +43,7 @@ const mainContainer = (container) => {
 // sections
 HeaderSection(bodyContainer);
 mainContainer(bodyContainer);
+FooterSection(bodyContainer);
 // components
 document.addEventListener('DOMContentLoaded', () => {
     LazyLoad();
