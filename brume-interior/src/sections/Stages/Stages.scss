@@ -13,6 +13,14 @@
 /* single stage item */
 .stages__item {
     display: flex;
+    opacity: 0;
+    animation: $sectionTransition forwards;
+
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * 0.15s;
+        }
+    }
 }
 /* number of the item */
 .stages__item-number {
@@ -82,6 +90,16 @@
     color: #5e5e5e;
     font-size: 0.9rem;
     font-weight: 300;
+}
+
+/* ANIMATIONS */
+@keyframes showItem {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* DEVICE ADAPTATION */

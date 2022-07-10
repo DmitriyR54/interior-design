@@ -75,6 +75,25 @@ const HeaderSection = (container) => {
         window.addEventListener('scroll', () => {
             fixedHeader();
         });
+
+        const anchorLinks = document.querySelectorAll('[data-anchor]');
+
+        anchorLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const section = document.querySelector(`.${link.getAttribute('data-anchor')}`);
+                // console.log(headerTag.offsetHeight);
+
+                window.scrollTo({
+                    top: section.offsetTop - headerTag.offsetHeight,
+                    behavior: 'smooth',
+                });
+
+                if (menuActive) {
+                    toggleNav();
+                }
+            });
+        });
     });
 };
 

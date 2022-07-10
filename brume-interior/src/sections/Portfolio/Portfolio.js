@@ -243,6 +243,30 @@ const PortfolioSection = (container) => {
                 closePortfolioModal('keyboard');
             }
         });
+
+        /* smooth appearing on the screen */
+        const portfolioInner = document.querySelector('.portfolio__inner');
+
+        if ('IntersectionObserver' in window) {
+            const observerCallback = (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        portfolioInner.style.opacity = '1';
+                        portfolioInner.style.transform = 'translateX(0)';
+                        observer.unobserve(portfolioInner);
+                    }
+                });
+            };
+            const observerOptions = {
+                threshold: 0.05,
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            observer.observe(portfolioInner);
+        } else {
+            portfolioInner.style.transform = 'translateX(0)';
+        }
     });
 };
 

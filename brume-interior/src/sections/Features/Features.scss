@@ -12,7 +12,7 @@
     display: grid;
     grid-template-rows: 5.25rem 3.7rem auto;
     transform: translateY(50%);
-    transition: 0.5s ease-out;
+    transition: $sectionTransition;
     opacity: 0;
 
     &:nth-child(2) {
@@ -57,7 +57,7 @@
         grid-template-rows: repeat(2, 1fr calc(1fr - 6rem));
         padding: 1.5rem 0 3rem;
     }
-    
+
     .features__item {
         grid-template-rows: 5.25rem 2.7rem auto;
 

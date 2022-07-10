@@ -59,6 +59,30 @@ const TestimonialsSection = (container) => {
 
             emblaTestimonials.on('select', setSelectedDotBtn);
             emblaTestimonials.on('init', setSelectedDotBtn);
+
+            /* smooth appearing on the screen */
+            if ('IntersectionObserver' in window) {
+                const observerCallback = (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            emblaNodeTestimonials.style.opacity = '1';
+                            emblaNodeTestimonials.style.transform = 'scale(1)';
+                            observer.unobserve(emblaNodeTestimonials);
+                        }
+                    });
+                };
+
+                const observerOptions = {
+                    threshold: 0.30,
+                };
+
+                const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+                observer.observe(emblaNodeTestimonials);
+            } else {
+                emblaNodeTestimonials.style.opacity = '1';
+                emblaNodeTestimonials.style.transform = 'scale(1)';
+            }
         }, 600);
     });
 };

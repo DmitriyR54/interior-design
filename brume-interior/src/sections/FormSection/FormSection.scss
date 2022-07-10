@@ -11,6 +11,9 @@
     background-image: url('./img/form-bg.jpg');
     background-size: cover;
     background-position: right;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: $sectionTransition;
 }
 
 .form {

@@ -26,6 +26,33 @@ const FormSection = (container) => {
                 closeModal(formModal);
             }
         });
+
+        /* smooth appearing on the screen */
+        const formWrapper = document.querySelector('.formSection__inner');
+
+        if ('IntersectionObserver' in window) {
+            const observerCallback = (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        formWrapper.style.opacity = '1';
+                        formWrapper.style.transform = 'translateY(0)';
+                        observer.unobserve(formWrapper);
+                    }
+                });
+            };
+            const observerOptions = {
+                threshold: 0.25,
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            setTimeout(() => {
+                observer.observe(formWrapper);
+            }, 500);
+        } else {
+            formWrapper.style.opacity = '1';
+            formWrapper.style.transform = 'translateY(0)';
+        }
     });
 };
 

@@ -3,6 +3,8 @@
 .video__wrapper {
     max-width: 1360px;
     margin: 0 auto;
+    transform: scale(0.5);
+    transition: $sectionTransition;
 }
 
 /* <video> element */

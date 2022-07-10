@@ -20,6 +20,8 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     overflow: auto;
 
     &.no-scroll {

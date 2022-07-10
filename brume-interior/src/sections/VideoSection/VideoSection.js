@@ -37,6 +37,29 @@ const VideoSection = (container) => {
                 controls.style.opacity = 1;
             }
         });
+
+        /* smooth appearing on the screen */
+        const videosection = document.querySelector('.video__wrapper');
+
+        if ('IntersectionObserver' in window) {
+            const observerCallback = (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        videosection.style.transform = 'scale(1)';
+                        observer.unobserve(videosection);
+                    }
+                });
+            };
+            const observerOptions = {
+                threshold: 0.20,
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            observer.observe(videosection);
+        } else {
+            videosection.style.transform = 'scale(1)';
+        }
     });
 };
 

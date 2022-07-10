@@ -1,5 +1,11 @@
 @import '../../styles/variables.scss';
 
+.portfolio__inner {
+    opacity: 0;
+    transform: translateX(-90%);
+    transition: $sectionTransition;
+}
+
 /* filter buttons wrapper */
 .portfolio__gallery-filter {
     display: flex;

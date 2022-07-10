@@ -2,6 +2,7 @@
 
 .testimonials__inner {
     padding: 7rem 0;
+    overflow: hidden;
 }
 .testimonials__title {
     margin-bottom: 0;
@@ -9,6 +10,9 @@
 
 /* carousel */
 .testimonials__carousel {
+    opacity: 0;
+    transform: scale(1.5);
+    transition: $sectionTransition;
     overflow: hidden;
 }
 .testimonials__wrapper {

@@ -99,6 +99,31 @@ const ServicesSection = (container) => {
         hoverTabsList();
         window.addEventListener('resize', hoverTabsList);
         screen.orientation.addEventListener('change', hoverTabsList);
+
+        /* smooth appearing on the screen */
+        const servicesInner = document.querySelector('.services__inner');
+
+        if ('IntersectionObserver' in window) {
+            const observerCallback = (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        servicesInner.style.transform = 'translateX(0)';
+                        servicesInner.style.opacity = '1';
+                        observer.unobserve(servicesInner);
+                    }
+                });
+            };
+            const observerOptions = {
+                threshold: 0.25,
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            observer.observe(servicesInner);
+        } else {
+            servicesInner.style.transform = 'translateX(0)';
+            servicesInner.style.opacity = '1';
+        }
     });
 };
 

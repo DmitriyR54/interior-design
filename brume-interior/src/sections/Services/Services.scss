@@ -1,8 +1,15 @@
 @import '../../styles/variables.scss';
 
+.services {
+    overflow: hidden;
+}
+
 .services__inner {
     padding-top: 7rem;
     padding-bottom: 7rem;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: $sectionTransition;
 }
 
 .services__wrapper {
