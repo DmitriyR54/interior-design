@@ -6,10 +6,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: './src/index.js',
+        index: './src/index.js',
+        portfolioPage: './src/pages/PortfolioPage/PortfolioPage.js',
     },
     output: {
-        filename: 'script.[contenthash].js',
+        filename: 'scripts/[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -53,6 +54,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            filename: 'index.html',
+            chunks: ['index'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pages/PortfolioPage/PortfolioPage.html',
+            filename: 'pages/portfolio.html',
+            chunks: ['portfolioPage'],
         }),
     ],
     resolve: {

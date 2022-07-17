@@ -1,0 +1,1 @@
+{"version":3,"file":"scripts/portfolioPage.6daff306c68bb00af674.js","mappings":"mBAIAA,QAAQC,IAAI,U","sources":["webpack://brume-interior/./src/pages/PortfolioPage/PortfolioPage.js"],"sourcesContent":["// styles\r\nimport '../../styles/styles.scss';\r\nimport '../../fonts/fonts.scss';\r\n\r\nconsole.log('works');\r\n"],"names":["console","log"],"sourceRoot":""}

@@ -55,6 +55,9 @@ module.exports = merge(common, {
         ],
     },
     optimization: {
+        splitChunks: {
+            // chunks: 'all',
+        },
         minimize: true,
         minimizer: [
             new TerserPlugin({
@@ -79,12 +82,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css',
+            filename: 'styles/style.[contenthash].css',
         }),
-        // new FontminPlugin({
-        //     autodetect: true,
-        //     allowedFilesRegex: null,
-        //     skippedFilesRegex: null,
-        // }),
     ],
 });
