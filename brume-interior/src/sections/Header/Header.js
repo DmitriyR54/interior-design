@@ -2,18 +2,23 @@ import headerHtml from './Header.html';
 import './Header.scss';
 import 'hamburgers/_sass/hamburgers/hamburgers.scss';
 
-const HeaderSection = (container) => {
+const HeaderSection = (container, colorTheme = 'light') => {
     container.innerHTML += headerHtml;
 
     window.addEventListener('DOMContentLoaded', () => {
         /* 'menu' is not just navigation links, but a burger button too */
         let menuActive = false;
 
+        /* header DOM element */
         const headerTag = document.querySelector('.header');
         /* nav tag */
         const headerMenu = headerTag.querySelector('.header__menu');
         /* nav burger button */
         const headerMenuBtn = headerMenu.querySelector('.header__menu-btn');
+
+        if (colorTheme === 'darkTheme') {
+            headerTag.classList.add('header-dark');
+        }
 
         headerMenuBtn.onclick = toggleNav;
         /* navigation links list */
@@ -27,6 +32,7 @@ const HeaderSection = (container) => {
             }
         };
 
+        /* open or close navigation menu */
         function toggleNav() {
             /* toggle menu status */
             !menuActive ? (menuActive = true) : (menuActive = false);

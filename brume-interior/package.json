@@ -52,11 +52,12 @@
         "xml-loader": "^1.2.1"
     },
     "dependencies": {
-        "embla-carousel": "^6.2.0",
+        "embla-carousel": "^7.0.0-rc05",
         "embla-carousel-auto-height": "^6.2.0",
-        "embla-carousel-autoplay": "^6.2.0",
+        "embla-carousel-autoplay": "^7.0.0-rc05",
+        "embla-carousel-class-names": "^7.0.0-rc05",
         "hamburgers": "^1.2.1",
-        "lightgallery": "^2.4.0",
+        "lightgallery": "^2.5.0",
         "lodash": "^4.17.21",
         "overlayscrollbars": "^1.13.2",
         "plyr": "^3.7.2",

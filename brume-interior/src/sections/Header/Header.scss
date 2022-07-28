@@ -45,7 +45,40 @@
             }
         }
     }
+
+    /* header dark theme */
+    &.header-dark {
+        .header__menu-btn {
+            .hamburger-box {
+                span,
+                span::before,
+                span::after {
+                    background-color: $blue !important;
+                }
+            }
+        }
+        .header__logo {
+            path {
+                stroke: $blue !important;
+            }
+        }
+        &.header-fixed {
+            .hamburger-box {
+                span,
+                span::before,
+                span::after {
+                    background-color: #fcfdfd !important;
+                }
+            }
+            .header__logo {
+                path {
+                    stroke: #fbfcfc !important;
+                }
+            }
+        }
+    }
 }
+
 .header__inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -260,8 +293,8 @@
         grid-row: 1 / span 1;
         text-align: left;
 
-        path{
-            stroke: #FBFCFC;
+        path {
+            stroke: #fbfcfc;
         }
     }
     /* nav tag */

@@ -11,7 +11,7 @@ import LazyLoad from 'Components/LazyLoad/LazyLoad';
 const bodyContainer = document.body;
 
 // sections
-HeaderSection(bodyContainer);
+HeaderSection(bodyContainer, 'darkTheme');
 FooterSection(bodyContainer);
 document.body.insertBefore(document.querySelector('.header'), document.querySelector('.main'));
 
