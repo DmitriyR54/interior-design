@@ -6,10 +6,12 @@
 .projects__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
     gap: 2rem;
 }
 .projects__item {
     display: block;
+    height: 100%;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     box-shadow: 0 0 1rem 0.5rem rgba(0, 32, 58, 0.07);
@@ -30,7 +32,11 @@
     }
 }
 .projects__item-image {
-    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     position: relative;
     z-index: 1;
 }
@@ -48,6 +54,7 @@
     flex-wrap: wrap;
     width: 100%;
     height: 3rem;
+    padding: 5px;
     background-color: rgba(235, 235, 235, 0.9);
     font-size: 0.9rem;
     text-align: center;
@@ -103,12 +110,12 @@
     }
 }
 @media (max-width: $phone) {
+    .projects__list {
+        grid-auto-rows: 150px;
+    }
     .projects__item-meta {
-        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-            & {
-                backdrop-filter: none;
-            }
-        }
+        height: 5rem;
+        backdrop-filter: none;
     }
     .projects__item-category {
         width: 100%;
