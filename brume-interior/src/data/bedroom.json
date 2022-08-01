@@ -1,38 +1,33 @@
 {
-    "name": "Home office design",
+    "name": "Bedrrom finishing works",
     "photos": [
         {
-            "src": "portfolio-homeoffice-1.jpg",
-            "width": "2000",
-            "height": "1125"
-        },
-        {
-            "src": "portfolio-homeoffice-2.jpg",
+            "src": "portfolio-bedroom-1.jpg",
             "width": "1920",
-            "height": "1080"
+            "height": "1181"
         },
         {
-            "src": "portfolio-homeoffice-3.jpg",
+            "src": "portfolio-bedroom-2.jpg",
+            "width": "1920",
+            "height": "1267"
+        },
+        {
+            "src": "portfolio-bedroom-3.jpg",
+            "width": "1920",
+            "height": "1280"
+        },
+        {
+            "src": "portfolio-bedroom-4.jpg",
             "width": "1920",
             "height": "1282"
         },
         {
-            "src": "portfolio-homeoffice-4.jpg",
+            "src": "portfolio-bedroom-5.jpg",
             "width": "1920",
-            "height": "1280"
-        },
-        {
-            "src": "portfolio-homeoffice-5.jpg",
-            "width": "1920",
-            "height": "1280"
-        },
-        {
-            "src": "portfolio-homeoffice-6.jpg",
-            "width": "1920",
-            "height": "2880"
+            "height": "1281"
         }
     ],
     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum reprehenderit eius quisquam, repellat, perspiciatis mollitia minus temporibus molestiae hic iure architecto voluptatibus blanditiis dolor nemo animi repudiandae nobis cum inventore facere nostrum quae similique cupiditate! Consectetur, ad. Laudantium, sequi possimus qui dolore sed nobis aspernatur voluptates! Sapiente et vel deleniti.",
     "category": "finishing works",
-    "date": "6 Jun '22"
+    "date": "6 Jul '22"
 }

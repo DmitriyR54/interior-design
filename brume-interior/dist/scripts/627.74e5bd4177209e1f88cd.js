@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbrume_interior=self.webpackChunkbrume_interior||[]).push([[627],{4627:o=>{o.exports=JSON.parse('{"name":"Kitchen finishing work","category":"finishing works","photos":["portfolio-kitchen-1.jpg","portfolio-kitchen-2.jpg","portfolio-kitchen-3.jpg","portfolio-kitchen-4.jpg","portfolio-kitchen-5.jpg"],"data":"6 Jun \'22"}')}}]);

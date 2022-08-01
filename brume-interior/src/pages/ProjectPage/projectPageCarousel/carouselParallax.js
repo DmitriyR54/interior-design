@@ -22,7 +22,7 @@ const calculateParallaxTransforms = (embla) => {
     });
 };
 
-export const parallax = (embla) => {
+export const carouselParallax = (embla) => {
     const slides = embla.slideNodes();
     const layers = slides.map((s) => s.querySelector('.projectPage__carousel-slide--parallax'));
 

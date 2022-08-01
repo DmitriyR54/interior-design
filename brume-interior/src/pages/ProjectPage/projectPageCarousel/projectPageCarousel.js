@@ -1,22 +1,31 @@
 import EmblaCarousel from 'embla-carousel';
 import ClassNames from 'embla-carousel-class-names';
 import './carouselStyles.scss';
-import { parallax } from './carouselParallax';
+import { carouselParallax } from './carouselParallax';
+import { setupPrevNextBtns, disablePrevNextBtns } from './carouselButtons';
 
 const projectPageCarousel = (galleryPlugin) => {
-    const wrap = document.querySelector('.embla');
-    const viewPort = wrap.querySelector('.embla__viewport');
+    const wrap = document.querySelector('.projectPage__carousel');
+    const viewPort = wrap.querySelector('.projectPage__carousel-viewport');
 
     const classNamesOptions = {
         selected: 'projectPage__carousel-slide-selected',
     };
 
+    const prevBtn = wrap.querySelector('.projectPage__carousel-button--prev');
+    const nextBtn = wrap.querySelector('.projectPage__carousel-button--next');
+
     const embla = EmblaCarousel(viewPort, { loop: false, dragFree: true }, [ClassNames(classNamesOptions)]);
 
-    const applyParallaxStyles = parallax(embla);
+    const applyParallaxStyles = carouselParallax(embla);
     embla.on('init', applyParallaxStyles);
     embla.on('scroll', applyParallaxStyles);
     embla.on('resize', applyParallaxStyles);
+
+    const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla);
+    setupPrevNextBtns(prevBtn, nextBtn, embla);
+    embla.on('init', disablePrevAndNextBtns);
+    embla.on('select', disablePrevAndNextBtns);
 
     /* prevent accidental click */
     const links = document.querySelectorAll('.projectPage__carousel-slide-selected');

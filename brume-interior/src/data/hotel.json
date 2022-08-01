@@ -1,38 +1,38 @@
 {
-    "name": "Home office design",
+    "name": "Interior for 'Hiloft' hotel",
     "photos": [
         {
-            "src": "portfolio-homeoffice-1.jpg",
-            "width": "2000",
-            "height": "1125"
+            "src": "portfolio-hotel-1.jpg",
+            "width": "1240",
+            "height": "860"
         },
         {
-            "src": "portfolio-homeoffice-2.jpg",
-            "width": "1920",
-            "height": "1080"
-        },
-        {
-            "src": "portfolio-homeoffice-3.jpg",
-            "width": "1920",
-            "height": "1282"
-        },
-        {
-            "src": "portfolio-homeoffice-4.jpg",
+            "src": "portfolio-hotel-2.jpg",
             "width": "1920",
             "height": "1280"
         },
         {
-            "src": "portfolio-homeoffice-5.jpg",
+            "src": "portfolio-hotel-3.jpg",
+            "width": "1920",
+            "height": "1219"
+        },
+        {
+            "src": "portfolio-hotel-4.jpg",
             "width": "1920",
             "height": "1280"
         },
         {
-            "src": "portfolio-homeoffice-6.jpg",
+            "src": "portfolio-hotel-5.jpg",
             "width": "1920",
-            "height": "2880"
+            "height": "2468"
+        },
+        {
+            "src": "portfolio-hotel-6.jpg",
+            "width": "1920",
+            "height": "1440"
         }
     ],
     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum reprehenderit eius quisquam, repellat, perspiciatis mollitia minus temporibus molestiae hic iure architecto voluptatibus blanditiis dolor nemo animi repudiandae nobis cum inventore facere nostrum quae similique cupiditate! Consectetur, ad. Laudantium, sequi possimus qui dolore sed nobis aspernatur voluptates! Sapiente et vel deleniti.",
-    "category": "finishing works",
+    "category": "interior design",
     "date": "6 Jun '22"
 }

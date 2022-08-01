@@ -9,6 +9,7 @@ import './ProjectPage.scss';
 import { HeaderSection } from 'Sections/Header/Header';
 import { FooterSection } from 'Sections/Footer/Footer';
 // components
+import { renderProjectData } from './renderProjectData';
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
 const bodyContainer = document.body;
@@ -25,12 +26,25 @@ const projectName = urlParams.get('name');
 
 console.log(projectName);
 
-import(`../../data/${projectName}.json`)
-    .then((response) => console.log(response))
-    .catch((err) => console.log(err));
+// import(`../../data/${projectName}.json`)
+//     .then((response) => {
+//         renderProjectData(response.default);
+//         LazyLoad();
+//         projectPageGallery();
+//         projectPageCarousel(galleryPlugin);
+//     })
+//     .catch((err) => console.log(err));
 
 document.addEventListener('DOMContentLoaded', () => {
-    LazyLoad();
-    projectPageGallery();
-    projectPageCarousel(galleryPlugin);
+    // LazyLoad();
+    // projectPageGallery();
+    // projectPageCarousel(galleryPlugin);
+    import(`../../data/${projectName}.json`)
+        .then((response) => {
+            renderProjectData(response.default);
+            LazyLoad();
+            projectPageGallery();
+            projectPageCarousel(galleryPlugin);
+        })
+        .catch((err) => console.log(err));
 });

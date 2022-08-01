@@ -1,6 +1,33 @@
 {
     "name": "Kitchen finishing work",
     "category": "finishing works",
-    "photos": ["portfolio-kitchen-1.jpg", "portfolio-kitchen-2.jpg", "portfolio-kitchen-3.jpg", "portfolio-kitchen-4.jpg", "portfolio-kitchen-5.jpg"],
-    "data": "6 Jun '22"
+    "photos": [
+        {
+            "src": "portfolio-kitchen-1.jpg",
+            "width": "1920",
+            "height": "1181"
+        },
+        {
+            "src": "portfolio-kitchen-2.jpg",
+            "width": "1919",
+            "height": "1281"
+        },
+        {
+            "src": "portfolio-kitchen-3.jpg",
+            "width": "1920",
+            "height": "1282"
+        },
+        {
+            "src": "portfolio-kitchen-4.jpg",
+            "width": "1920",
+            "height": "1894"
+        },
+        {
+            "src": "portfolio-kitchen-5.jpg",
+            "width": "1920",
+            "height": "2413"
+        }
+    ],
+    "date": "12 Mar '22",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum reprehenderit eius quisquam, repellat, perspiciatis mollitia minus temporibus molestiae hic iure architecto voluptatibus blanditiis dolor nemo animi repudiandae nobis cum inventore facere nostrum quae similique cupiditate! Consectetur, ad. Laudantium, sequi possimus qui dolore sed nobis aspernatur voluptates! Sapiente et vel deleniti."
 }
