@@ -7,13 +7,17 @@ const TestimonialsSection = (container) => {
     container.innerHTML += testimonialsHtml;
 
     window.addEventListener('DOMContentLoaded', () => {
-        /* carousel */
         setTimeout(() => {
+            /* carousel */
             const emblaNodeTestimonials = document.querySelector('.testimonials__carousel');
-            /* list of testimonial items */
-            const testimonialsItem = emblaNodeTestimonials.querySelectorAll('.testimonials__item');
 
             const emblaOptionsTestimonials = { loop: false };
+
+            /* initialize the carousel */
+            const emblaTestimonials = EmblaCarousel(emblaNodeTestimonials, emblaOptionsTestimonials);
+
+            /* list of testimonial items */
+            const testimonialsItem = emblaNodeTestimonials.querySelectorAll('.testimonials__item');
 
             /* add styles for active item */
             const activeItemStyles = (array, item) => {
@@ -24,9 +28,6 @@ const TestimonialsSection = (container) => {
                 item.style.opacity = 1;
                 item.style.transform = 'scale(1)';
             };
-
-            /* initialize the carousel */
-            const emblaTestimonials = EmblaCarousel(emblaNodeTestimonials, emblaOptionsTestimonials);
 
             /* carousel navigation */
             const setupDotBtns = (dotsArray, embla) => {
@@ -66,14 +67,13 @@ const TestimonialsSection = (container) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
                             emblaNodeTestimonials.style.opacity = '1';
-                            emblaNodeTestimonials.style.transform = 'scale(1)';
                             observer.unobserve(emblaNodeTestimonials);
                         }
                     });
                 };
 
                 const observerOptions = {
-                    threshold: 0.30,
+                    threshold: 0.3,
                 };
 
                 const observer = new IntersectionObserver(observerCallback, observerOptions);
@@ -81,9 +81,8 @@ const TestimonialsSection = (container) => {
                 observer.observe(emblaNodeTestimonials);
             } else {
                 emblaNodeTestimonials.style.opacity = '1';
-                emblaNodeTestimonials.style.transform = 'scale(1)';
             }
-        }, 600);
+        }, 500);
     });
 };
 

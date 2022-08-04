@@ -1,6 +1,3 @@
-// libraries
-import { projectPageCarousel } from './projectPageCarousel/projectPageCarousel';
-import { projectPageGallery, galleryPlugin } from './projectPageGallery/projectPageGallery';
 // styles
 import '../../styles/styles.scss';
 import '../../fonts/fonts.scss';
@@ -26,25 +23,10 @@ const projectName = urlParams.get('name');
 
 console.log(projectName);
 
-// import(`../../data/${projectName}.json`)
-//     .then((response) => {
-//         renderProjectData(response.default);
-//         LazyLoad();
-//         projectPageGallery();
-//         projectPageCarousel(galleryPlugin);
-//     })
-//     .catch((err) => console.log(err));
-
 document.addEventListener('DOMContentLoaded', () => {
-    // LazyLoad();
-    // projectPageGallery();
-    // projectPageCarousel(galleryPlugin);
     import(`../../data/${projectName}.json`)
         .then((response) => {
             renderProjectData(response.default);
-            LazyLoad();
-            projectPageGallery();
-            projectPageCarousel(galleryPlugin);
         })
         .catch((err) => console.log(err));
 });

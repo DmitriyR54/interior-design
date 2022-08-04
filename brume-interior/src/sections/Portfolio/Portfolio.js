@@ -175,8 +175,10 @@ const PortfolioSection = (container) => {
                         LazyLoad();
 
                         // use carousel for images
-                        const emblaNodePortfolio = document.querySelector('.portfolio__modal-photos-wrapper');
-                        const emblaPortfolio = EmblaCarouselPortfolio(emblaNodePortfolio);
+                        setTimeout(() => {
+                            const emblaNodePortfolio = document.querySelector('.portfolio__modal-photos-wrapper');
+                            EmblaCarouselPortfolio(emblaNodePortfolio);
+                        }, 500);
                     }
                 });
             };
