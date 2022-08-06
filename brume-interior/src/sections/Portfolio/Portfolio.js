@@ -144,7 +144,7 @@ const PortfolioSection = (container) => {
 
         // array of downloaded portfolio information
         let portfolioData = [];
-        // list of downloaded portfolio information (using string for performance improvement)
+        // list of downloaded portfolio information
         let downloadedItems = '';
 
         // DOM nodes inside of the portfolio modal window
@@ -183,7 +183,7 @@ const PortfolioSection = (container) => {
                 });
             };
 
-            // function that returns defail information about showed portfolio item inside of the modal window
+            // function that returns detail information about showed portfolio item inside of the modal window
             const downloadData = new Promise((resolve, reject) => {
                 resolve(import(/* webpackMode: "eager" */ `./portfolioInfo/${src}`));
             });

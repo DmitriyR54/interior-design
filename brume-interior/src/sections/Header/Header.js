@@ -82,23 +82,14 @@ const HeaderSection = (container, colorTheme = 'light') => {
             fixedHeader();
         });
 
-        const anchorLinks = document.querySelectorAll('[data-anchor]');
+        const anchorLinks = document.querySelectorAll('.header__nav-link a');
 
         anchorLinks.forEach((link) => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const section = document.querySelector(`.${link.getAttribute('data-anchor')}`);
-                // console.log(headerTag.offsetHeight);
-
-                window.scrollTo({
-                    top: section.offsetTop - headerTag.offsetHeight,
-                    behavior: 'smooth',
-                });
-
-                if (menuActive) {
-                    toggleNav();
-                }
-            });
+            if (!window.location.pathname.includes('/index.html')) {
+                let href = link.getAttribute('href');
+                href = `../index.html${href}`;
+                link.setAttribute('href', href);
+            }
         });
     });
 };
