@@ -5,9 +5,9 @@ import './ProjectPage.scss';
 // sections
 import { HeaderSection } from 'Sections/Header/Header';
 import { FooterSection } from 'Sections/Footer/Footer';
+import { ErrorPage } from './ErrorPage/ErrorPage';
 // components
 import { renderProjectData } from './renderProjectData';
-import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
 const bodyContainer = document.body;
 
@@ -21,12 +21,14 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const projectName = urlParams.get('name');
 
-console.log(projectName);
-
 document.addEventListener('DOMContentLoaded', () => {
     import(`../../data/${projectName}.json`)
         .then((response) => {
             renderProjectData(response.default);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            console.log(err);
+            const projectPageInner = document.querySelector('.projectPage__inner');
+            ErrorPage(projectPageInner, err);
+        });
 });
