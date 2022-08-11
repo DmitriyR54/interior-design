@@ -10,6 +10,7 @@ const projectPageGallery = () => {
         speed: 500,
     });
 
+    /* I don't let user to zoom screen because of moving aside menu (you can change meta in the ProjectPage.html and see what I mean (mobile devices only)), but if they open a gallery, I think it would be good to let them zoom an image if they want */
     const changeMeta = (scaleValue) => {
         const meta = document.querySelectorAll('meta');
         meta.forEach((el) => {

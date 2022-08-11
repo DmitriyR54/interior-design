@@ -1,6 +1,7 @@
 // libraries
 import { projectPageCarousel } from './projectPageCarousel/projectPageCarousel';
 import { projectPageGallery, galleryPlugin } from './projectPageGallery/projectPageGallery';
+// components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
 
 const renderProjectData = (data) => {
@@ -36,6 +37,7 @@ const renderProjectData = (data) => {
 
             projectPhotos += imgMarkup;
 
+            /* render a carousel after processing the last element in the array */
             if (data.photos.length - 1 === index) {
                 projectGallery.innerHTML += projectPhotos;
                 LazyLoad();

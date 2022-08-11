@@ -1,3 +1,5 @@
+/* thanks for the code example to davidcetinkaya, link for it - https://codesandbox.io/s/embla-carousel-parallax-vanilla-uk1c6 */
+
 const PARALLAX_FACTOR = 1.2;
 
 const calculateParallaxTransforms = (embla) => {

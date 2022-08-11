@@ -1,5 +1,12 @@
 @import '../../styles/variables.scss';
 
+/* hide content until the page loads */
+.main,
+.header,
+.footer {
+    opacity: 0;
+}
+
 .projectPage__inner {
     padding: 5rem 0;
 }
@@ -8,12 +15,14 @@
     text-align: center;
 }
 
+/* carousel styles */
 .projectPage__carousel {
     margin-bottom: 3rem;
 }
 .embla__viewport {
     position: relative;
 
+    /* here I've added a pseudo element to avoid accidental click while user is dragging the carousel and to prevent full screen gallery from opening */
     &::after {
         content: '';
         width: 100%;
@@ -24,6 +33,7 @@
         z-index: 2;
     }
 }
+/* you can see it yourself if you increment z-index of this element to 3 or more and try to drag the carousel */
 .projectPage__gallery {
     position: relative;
     z-index: 1;
@@ -45,7 +55,7 @@
     transition: 0.3s ease;
 
     &:hover,
-    &:focus{
+    &:focus {
         opacity: 0.7;
     }
 }

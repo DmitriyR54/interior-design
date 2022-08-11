@@ -50,6 +50,13 @@ section {
     background-color: $white;
 }
 
+/* hide content until the page loads */
+.main,
+.header,
+.footer {
+    opacity: 0;
+}
+
 @media (max-width: $tablet) {
     html {
         font-size: 18px;

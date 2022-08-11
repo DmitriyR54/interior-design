@@ -20,8 +20,11 @@ import { TestimonialsSection } from 'Sections/Testimonials/Testimonials';
 import { FooterSection } from 'Sections/Footer/Footer';
 // components
 import LazyLoad from 'Components/LazyLoad/LazyLoad';
+import { PageLoader, HidePageLoader } from 'Components/PageLoader/PageLoader';
 
 const bodyContainer = document.body;
+
+PageLoader(bodyContainer);
 
 const mainContainer = (container) => {
     // root container
@@ -44,7 +47,9 @@ const mainContainer = (container) => {
 HeaderSection(bodyContainer);
 mainContainer(bodyContainer);
 FooterSection(bodyContainer);
+
 // components
 document.addEventListener('DOMContentLoaded', () => {
+    HidePageLoader(bodyContainer);
     LazyLoad();
 });
