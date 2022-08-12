@@ -178,7 +178,7 @@ const PortfolioSection = (container) => {
                         setTimeout(() => {
                             const emblaNodePortfolio = document.querySelector('.portfolio__modal-photos-wrapper');
                             EmblaCarouselPortfolio(emblaNodePortfolio);
-                        }, 500);
+                        }, 750);
                     }
                 });
             };
